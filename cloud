@@ -1,0 +1,23 @@
+<th style="width: 22%;">cloud</th>
+<th style="width: 22%;">Feels like</th>
+<th style="width: 22%;">Humidity</th>
+<th style="width: 22%;">Maximum temperature</th>
+<th style="width: 22%;">Minimum temperature</th>
+<th style="width: 22%;">Sunrise</th>
+<th style="width: 22%;">Sunset</th>
+<th style="width: 22%;">Temperatures</th>
+<th style="width: 22%;">Wind degrees</th>
+<th style="width: 22%;">Wind speed</th>
+
+
+
+cloud_pct=response.cloud_pct
+temp=response.temp
+feels_like=response.feels_like
+humidity=response.humidity
+min_temp=response.min_temp
+max_temp=response.max_temp
+wind_speed=response.windspeed
+wind_degrees=response.wind_degrees
+sunrise=response.sunrise
+sunset=response.sunset
