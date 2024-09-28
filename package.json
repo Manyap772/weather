@@ -1,0 +1,26 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "weather detecting project of different locations",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manyap772/weather.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manyap772/weather/issues"
+  },
+  "homepage": "https://github.com/Manyap772/weather#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
