@@ -1,35 +1,50 @@
-const getWeather=(city)=>{
-	cityName.innerHTML=city
-const data = null;
+// Dummy weather data for locations
+const weatherData = {
+    "New York": {
+        temperature: "22°C",
+        description: "Clear sky",
+        humidity: "50%",
+        windSpeed: "5 m/s"
+    },
+    "London": {
+        temperature: "16°C",
+        description: "Partly cloudy",
+        humidity: "65%",
+        windSpeed: "3 m/s"
+    },
+    "Tokyo": {
+        temperature: "18°C",
+        description: "Light rain",
+        humidity: "70%",
+        windSpeed: "4 m/s"
+    },
+    "Paris": {
+        temperature: "20°C",
+        description: "Sunny",
+        humidity: "55%",
+        windSpeed: "6 m/s"
+    },
+    "Sydney": {
+        temperature: "25°C",
+        description: "Clear sky",
+        humidity: "60%",
+        windSpeed: "7 m/s"
+    }
+};
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-		cloud_pct.innerHTML=response.cloud_pct
-temp.innerHTML=response.temp
-feels_like.innerHTML=response.feels_like
-humidity.innerHTML=response.humidity
-min_temp.innerHTML=response.min_temp
-max_temp.innerHTML=response.max_temp
-wind_speed.innerHTML=response.windspeed
-wind_degrees.innerHTML=response.wind_degrees
-sunrise.innerHTML=response.sunrise
-sunset.innerHTML=response.sunset
-
-
-	}
-});
-
-xhr.open('GET', 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city'= + city);
-xhr.setRequestHeader('x-rapidapi-key', '6e3b23c2eemsha94db51cca4b9abp1aa892jsnb7524c0fe8c6');
-xhr.setRequestHeader('x-rapidapi-host', 'weather-by-api-ninjas.p.rapidapi.com');
-
-xhr.send(data);}
-submitEvent.addEventListner("click", (e)=>{
-	e.preventDefault()
-	getWeather(city.value)
-})
-getWeather("Delhi")
+// Function to display weather information for the selected city
+function displayWeather(city) {
+    const data = weatherData[city];
+    if (data) {
+        const weatherInfo = `
+            <h2>${city}</h2>
+            <p><strong>Temperature:</strong> ${data.temperature}</p>
+            <p><strong>Weather:</strong> ${data.description}</p>
+            <p><strong>Humidity:</strong> ${data.humidity}</p>
+            <p><strong>Wind Speed:</strong> ${data.windSpeed}</p>
+        `;
+        document.getElementById('weather-info').innerHTML = weatherInfo;
+    } else {
+        document.getElementById('weather-info').innerHTML = "<p>Weather data unavailable for this location.</p>";
+    }
+}
